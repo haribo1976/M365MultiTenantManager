@@ -203,7 +203,7 @@ function Navigate-ToView {
         "ConditionalAccess"= "Conditional Access Policies"
     }
     
-    $script:UI.ContentHeader.Text = $headers[$ViewName] ?? $ViewName
+    $script:UI.ContentHeader.Text = if ($headers[$ViewName]) { $headers[$ViewName] } else { $ViewName }
     
     # Show appropriate view
     switch -Wildcard ($ViewName) {
@@ -392,4 +392,4 @@ function Update-Status {
 }
 #endregion
 
-Export-ModuleMember -Function 'Show-MainWindow'
+# Export handled by dot-sourcing
