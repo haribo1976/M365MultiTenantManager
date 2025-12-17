@@ -200,6 +200,8 @@ function Connect-M365Tenant {
             # Interactive flow
             Write-M365Log -Message "Using interactive authentication" -Level Debug -Component "Auth"
             
+            # Force import MSAL.PS
+            Import-Module MSAL.PS -Force -ErrorAction SilentlyContinue
             if (Get-Command Get-MsalToken -ErrorAction SilentlyContinue) {
                 $token = Get-MsalToken -ClientId $AppId -TenantId $TenantId -Scopes $scopes -Interactive
             }
