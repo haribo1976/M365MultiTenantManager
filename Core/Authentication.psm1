@@ -203,7 +203,7 @@ function Connect-M365Tenant {
             # Force import MSAL.PS
             Import-Module MSAL.PS -Force -ErrorAction SilentlyContinue
             if (Get-Command Get-MsalToken -ErrorAction SilentlyContinue) {
-                $token = Get-MsalToken -ClientId $AppId -TenantId $TenantId -Scopes $scopes -Interactive
+                $token = Get-MsalToken -ClientId $AppId -TenantId $TenantId -Scopes $scopes -DeviceCode
             }
             else {
                 # Fallback to simple OAuth flow

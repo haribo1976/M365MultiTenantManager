@@ -133,8 +133,8 @@ function Initialize-UIData {
         $t
     }
     
-    $script:UI.TenantSelector.ItemsSource = $tenantsWithStatus
-    $script:UI.TenantGrid.ItemsSource = $tenantsWithStatus
+    $script:UI.TenantSelector.ItemsSource = @($tenantsWithStatus)
+    $script:UI.TenantGrid.ItemsSource = @($tenantsWithStatus)
     
     # Update summary cards
     $script:UI.TenantCount.Text = $tenants.Count.ToString()
