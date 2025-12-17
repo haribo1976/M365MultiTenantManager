@@ -1,0 +1,20 @@
+{
+  "DefaultAppId": "14d82eec-204b-4c2f-b7e8-296a70dab67e",
+  "CustomAppId": null,
+  "UseDefaultPermissions": true,
+  "GraphVersion": "v1.0",
+  "GraphBetaEndpoints": ["secureScores", "conditionalAccess"],
+  "RequestTimeout": 30,
+  "MaxRetries": 3,
+  "ExportPath": ".\\Export",
+  "LogPath": ".\\Logs",
+  "LogLevel": "Information",
+  "Theme": "Light",
+  "AutoRefreshInterval": 300,
+  "ShowGuestUsers": true,
+  "ShowDisabledUsers": false,
+  "CacheExpiryMinutes": 15,
+  "EnableCaching": true,
+  "PageSize": 100,
+  "DateFormat": "yyyy-MM-dd HH:mm:ss"
+}

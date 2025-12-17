@@ -1,0 +1,28 @@
+# Logs
+Logs/
+*.log
+
+# Export data
+Export/
+
+# Token cache
+TokenCache/
+
+# User-specific settings
+Config/Tenants.json
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+
+# PowerShell
+*.ps1xml
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store

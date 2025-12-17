@@ -1,0 +1,34 @@
+{
+  "description": "Example batch job configuration for M365 Multi-Tenant Manager",
+  "jobs": [
+    {
+      "name": "Export All Tenants",
+      "action": "Export",
+      "tenants": ["*"],
+      "scope": ["Users", "Groups", "Licenses", "ConditionalAccess"],
+      "outputPath": "./Export/{TenantName}/{DateTime}"
+    },
+    {
+      "name": "Export Single Tenant",
+      "action": "Export",
+      "tenants": ["00000000-0000-0000-0000-000000000001"],
+      "scope": ["All"],
+      "outputPath": "./Export/{TenantName}/{DateTime}"
+    },
+    {
+      "name": "Compare CA Policies",
+      "action": "Compare",
+      "sourceTenant": "00000000-0000-0000-0000-000000000001",
+      "targetTenant": "00000000-0000-0000-0000-000000000002",
+      "scope": ["ConditionalAccess"],
+      "outputPath": "./Reports/CA-Comparison.json"
+    },
+    {
+      "name": "License Report",
+      "action": "Export",
+      "tenants": ["*"],
+      "scope": ["Licenses"],
+      "outputPath": "./Reports/LicenseReport_{DateTime}.csv"
+    }
+  ]
+}
