@@ -63,6 +63,15 @@ $Host.UI.RawUI.WindowTitle = "M365 Multi-Tenant Manager v$($script:Version)"
 #region Module Loading
 Write-Host "Loading M365 Multi-Tenant Manager v$($script:Version)..." -ForegroundColor Cyan
 
+# Pre-load MSAL.PS globally
+try {
+    Import-Module MSAL.PS -Force -Global -ErrorAction Stop
+    Write-Host "  MSAL.PS pre-loaded" -ForegroundColor Green
+}
+catch {
+    Write-Host "  WARNING: MSAL.PS not available" -ForegroundColor Yellow
+}
+
 # Load core modules in order
 $coreModules = @(
     "Core\Logging.psm1",
